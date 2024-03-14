@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Realidad Aumentada 02</title>
+        <!-- Librería Javascript aFrame para usar funciones interactivas 3D y de realidad aumentada. La librería aframe-particle-system es para crear sistemas de partículas -->
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="aframe-particle-system-component.min.js"></script>
+    </head>
+    <body>
+  
+        <!-- 
+            Primero hay que crear una escena virtual.
+            Si pulsas la tecla Ctrl + Alt + i accederás al panel de inspección y podrás manejar el mundo virtual casi a tu antojo. Pruébalo.
+        -->
+        <a-scene>
+           <!-- 
+                a-camera: todo mundo virtual y 3D necesita de una cámara para situarse como espectador.
+                fov: es el ángulo de visión, imita la amplitud visual del ojo humano.
+            --> 
+            <a-camera fov="66" position="1 2 3"></a-camera>
+            <!-- 
+                a-box: permite crear una cubo en 3D 
+                position: posición en las coordenadas (x,y,z) las undiades son en metros
+                rotation: podemos rotar en los 3 ejes (x,y,z) las unidades son en grados
+                opacity: transparencia del objeto, 0 mínimo y 1 y máximo
+                scale: escala y tamaño del objeto en los 3 ejes
+                src: insertamos la imagen que queremos como textura de fondo, aumenta el realismo
+            -->
+
+            <!-- 
+                a-plane: plano liso
+                width: nos permite indicar las unidades de la anchura
+                height: nos permite indicar las unidades de la altura
+            -->
+            <a-plane 
+                position="0 0 -4" rotation="-90 0 0" src="./img/yerba.png" 
+                repeat="2 2 2"
+                width="7" height="7">
+            </a-plane>
+
+            <!--
+                a-sky: es el cielo que rodea nuestra escena en 3D
+                color: podemos indicar la tonalidad del cielo
+                src: podemos insertar una imagen de fondo personal y única
+            -->
+            <!-- 
+                a-sphere: una esfera en 3D
+                a-cylinder: un cilindro en 3D
+                a-sky: cielo, podemos ponerle una fotografía de fondo
+            -->
+            <a-box position="-0.15 1.344 -3.935" rotation="0 0 0" scale="1.43 0.64 1.05" material="opacity: 1;" src="./img/fiau.png" shadow></a-box>
+            <a-box position="-0.037 0.75 -3.935" rotation="0 0 0" scale="2.57 0.60 1.05" material="opacity: 1;" src="./img/fiau.png" shadow></a-box>
+            <a-box position="-0.064 1.344 -3.935" rotation="0 0 0" scale="1.3 0.56 0.94" material="opacity: 1;" src="./img/cristal.png" shadow></a-box>
+            <a-sphere position="1.148 0.736 -4.205" radius="1.25" scale="0.15 0.15 0.15" color="#f7e482" shadow></a-sphere>
+            <a-sphere position="1.148 0.736 -3.644" radius="1.25" scale="0.15 0.15 0.15" color="#f7e482" shadow></a-sphere>
+            <a-cylinder position="0.765 0.318 -3.559" radius="0.5" height="1.5" rotation="90 0 0" scale="0.636 0.115 0.658" material="opacity: 1;" src="./img/rueda.png" shadow></a-cylinder>
+            <a-cylinder position="-0.83 0.318 -4.317" radius="0.5" height="1.5" rotation="90 0 0" scale="0.636 0.115 0.658" material="opacity: 1;" src="./img/rueda.png" shadow></a-cylinder>     
+            <a-cylinder position="0.765 0.318 -4.317" radius="0.5" height="1.5" rotation="90 0 0" scale="0.636 0.115 0.658" material="opacity: 1;" src="./img/rueda.png" shadow></a-cylinder>
+            <a-cylinder position="-0.83 0.318 -3.559" radius="0.5" height="1.5" rotation="90 0 0" scale="0.636 0.115 0.658" material="opacity: 1;" src="./img/rueda.png" shadow></a-cylinder>
+
+
+            
+            <!--
+                a-entity: podemos crear entidad propias, en este caso creamos un pequeño sistema de partículas en forma de nubes
+                preset: dust, rain, snow, stars, colors
+                velocityValue: velocidad de impulso en cada uno de los ejes
+            -->
+            <a-entity position="0 5 -15" particle-system="preset:rain; velocityValue:1 1 0; particleCount:1000"></a-entity>
+            <a-sky color="#ADD8E6"></a-sky>
+        </a-scene>
+    </body>
+</html>

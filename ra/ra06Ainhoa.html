@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <title>Realidad Aumentada 06</title>
+    <!-- Incluimos la librería A-Frame -->
+    <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+    <!-- Incluimos ar.js para A-Frame -->
+    <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+</head>
+<body style='margin : 0px; overflow: hidden;'>
+  <a-scene embedded arjs>
+    <!-- Creamos nuestro propio contenido -->
+    <a-box position="0.945 1.618 -0.692" rotation="0 0 0" color="#4CC3D9" scale="1.02 0.115 0.452"></a-box>
+    <a-text position='-1 1 -1' value="RUBIES" color="#911d28" scale="2 2 2"></a-text>
+    <a-octahedron position="-1 0.4 1" radius="0.5" rotation="-27.044 21.199 -10.027" scale="0.6 0.6 0.6" color="#EF2D5E"></a-octahedron>
+    <a-octahedron position="1.066 0.4 -0.369" radius="0.5" rotation="-27.044 21.199 -10.027" scale="0.893 0.893 0.893" color="#EF2D5E"></a-octahedron>
+    <a-cylinder position="0.931 1 -0.75" scale=" 0.876 1 0.477" radius="0.35" height="1.5" color="#5a4b30"></a-cylinder>
+    <a-octahedron position="0 0.7 0" color="#911d28" arc="360" radius="1" radius-tubular="0.07" rotation="-7.964 0 0" scale="0.55 0.55 0.55">
+        <a-animation attribute="rotation" to="360 0 0" dur="6000" easing='linear' repeat="indefinite"></a-animation>
+    </a-octahedron>
+    <a-plane position="0 0 0" rotation="-90 0 0" width="3" height="3" color="#7BC8A4"></a-plane>
+    <!-- define a camera which will move according to the marker position -->
+    <a-marker-camera preset='hiro'></a-marker-camera>
+  </a-scene>  
+</body>
+</html>
